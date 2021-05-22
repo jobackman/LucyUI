@@ -5,10 +5,25 @@
 ## Title: LucyUI
 ## Notes:
 ## Author: LucyON
-## Version: 0.0.1
+## Version: @project-version@
+## DefaultState: Enabled
 ## SavedVariables: LucyUIDB
+## OptionalDeps: LibStub, Ace3
+## X-Curse-Project-ID:
+## X-WoWI-ID:
+## X-Wago-ID:
 ## X-Credits-Maintainer: LucyON
 ## X-License: MIT
+
+#@no-lib-strip@
+Libs/LibStub/LibStub.lua
+Libs/AceAddon-3.0/AceAddon-3.0.xml
+Libs/AceConsole-3.0/AceConsole-3.0.xml
+Libs/AceEvent-3.0/AceEvent-3.0.xml
+Libs/AceDB-3.0/AceDB-3.0.xml
+Libs/AceDBOptions-3.0/AceDBOptions-3.0.xml
+Libs/AceConfig-3.0/AceConfig-3.0.xml
+#@end-no-lib-strip@
 
 inc/LucyUI.lua
 inc/core/options.lua
