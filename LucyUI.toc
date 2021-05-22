@@ -1,0 +1,17 @@
+## Interface: 90005
+## Interface-Retail: 90005
+## Interface-Classic: 11306
+## Interface-BCC: 20501
+## Title: LucyUI
+## Notes:
+## Author: LucyON
+## Version: 0.0.1
+## SavedVariables: LucyUIDB
+## X-Credits-Maintainer: LucyON
+## X-License: MIT
+
+# libs/embeds.xml
+
+inc/LucyUI.lua
+
+inc/misc/loss-of-control.lua
