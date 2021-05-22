@@ -10,8 +10,7 @@
 ## X-Credits-Maintainer: LucyON
 ## X-License: MIT
 
-# libs/embeds.xml
-
 inc/LucyUI.lua
+inc/core/options.lua
 
 inc/misc/loss-of-control.lua
