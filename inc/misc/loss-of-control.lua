@@ -1,15 +1,12 @@
 local AddonName, NS = ...
 
-if not NS.isRetail then
-  return
-end
-
+--@retail@
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("PLAYER_LOGIN")
 frame:SetScript("OnEvent", function(self, event)
-  --@debug
+  --@debug@
   LucyUI:Print("Fixing Loss of control")
-  --@end-debug
+  --@end-debug@
 
   -- https://www.mmo-champion.com/threads/1231654-Loss-of-Control-Interface-UI
   -- Move around the entire frame
@@ -46,4 +43,4 @@ frame:SetScript("OnEvent", function(self, event)
   -- timeLeft:SetScale(0.8);
 
 end)
-
+--@end-retail@

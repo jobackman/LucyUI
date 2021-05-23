@@ -1,15 +1,12 @@
 local _, NS = ...
 
-if NS.isClassic then
-  return
-end
-
+--@non-version-classic@
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("PLAYER_LOGIN")
 frame:SetScript("OnEvent", function(self, event)
-  --@debug
+  --@debug@
   LucyUI:Print("fixing unitframes")
-  --@end-debug
+  --@end-debug@
   -- PlayerFrame:UnregisterEvent("UNIT_COMBAT")
   PetFrame:UnregisterEvent("UNIT_COMBAT")
 
@@ -20,3 +17,4 @@ frame:SetScript("OnEvent", function(self, event)
   FocusFrameSpellBar:SetScale(castbarScale)
   TargetFrameSpellBar:SetScale(castbarScale)
 end)
+--@end-non-version-classic@

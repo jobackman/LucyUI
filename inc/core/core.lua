@@ -6,25 +6,25 @@ AceConfig = LibStub("AceConfig-3.0")
 AceDialog = LibStub("AceConfigDialog-3.0")
 
 function LucyUI:OnInitialize(event)
-  --@debug
+  --@debug@
   self:Print("OnInitialize")
-  --@end-debug
+  --@end-debug@
   NS.db = LibStub("AceDB-3.0"):New(addonName .."DB", NS.defaultConfig, true)
   AceConfig:RegisterOptionsTable(addonName, NS.config, {"/lui"})
   AceDialog:AddToBlizOptions(addonName, addonName)
 end
 
 function LucyUI:OnEnable()
-  --@debug
+  --@debug@
   self:Print("OnEnable")
   ViragDevTool_AddData(NS, 'LucyUI addonTable')
-  --@end-debug
+  --@end-debug@
 end
 
 function LucyUI:OnDisable()
-  --@debug
+  --@debug@
   self:Print("OnDisable")
-  --@end-debug
+  --@end-debug@
 end
 
 -- "UIFrameFadeIn", -- [461]

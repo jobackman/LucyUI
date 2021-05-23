@@ -1,5 +1,6 @@
 local _, NS = ...
 
+--@retail@
 local SUIMicroMenu = CreateFrame("Frame")
 SUIMicroMenu:RegisterEvent("PLAYER_LOGIN")
 SUIMicroMenu:RegisterEvent("UNIT_EXITED_VEHICLE")
@@ -9,9 +10,9 @@ SUIMicroMenu:SetScript("OnEvent", function(self)
   -- Move the MicroButtonMenu to the center top instead
   -- and hide all the bag buttons
   if not SUIDB.A_INVISBAGS == true then return end
-  --@debug
+  --@debug@
   LucyUI:Print("fixing unitframes")
-  --@end-debug
+  --@end-debug@
 
   local scale = 0.6
   local padding = 5
@@ -47,3 +48,4 @@ SUIMicroMenu:SetScript("OnEvent", function(self)
 
   CharacterMicroButton:SetPoint("TOPLEFT", CF, "TOPLEFT", padding, -padding)
 end)
+--@end-retail@
