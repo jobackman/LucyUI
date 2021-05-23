@@ -1,5 +1,6 @@
--- https://www.mmo-champion.com/threads/1231654-Loss-of-Control-Interface-UI
+local AddonName, NS = ...
 
+-- https://www.mmo-champion.com/threads/1231654-Loss-of-Control-Interface-UI
 -- Move around the entire frame
 LossOfControlFrame:ClearAllPoints()
 LossOfControlFrame:SetPoint("CENTER",UIParent,"CENTER",75,200)
