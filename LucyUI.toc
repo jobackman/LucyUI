@@ -31,6 +31,6 @@ inc/core/config.lua
 
 # Misc
 inc/misc/unitframes.lua
-inc/misc/actionbar.lua
+inc/misc/artframes.lua
 inc/misc/sui-micromenu.lua
 inc/misc/loss-of-control.lua
