@@ -11,7 +11,7 @@ SUIMicroMenu:SetScript("OnEvent", function(self)
   -- and hide all the bag buttons
   if not SUIDB.A_INVISBAGS == true then return end
   --@debug@
-  LucyUI:Print("fixing unitframes")
+  LucyUI:Print("Putting micromenu center top")
   --@end-debug@
 
   local scale = 0.6

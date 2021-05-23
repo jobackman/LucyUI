@@ -29,6 +29,9 @@ Libs\AceConfig-3.0\AceConfig-3.0.xml
 inc/core/core.lua
 inc/core/config.lua
 
+# Frames
+inc/frames/MainMenuBar.lua
+
 # Misc
 inc/misc/unitframes.lua
 inc/misc/artframes.lua

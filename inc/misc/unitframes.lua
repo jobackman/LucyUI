@@ -1,9 +1,9 @@
 local _, NS = ...
 
 --@non-version-classic@
-local frame = CreateFrame("Frame")
-frame:RegisterEvent("PLAYER_LOGIN")
-frame:SetScript("OnEvent", function(self, event)
+local F = CreateFrame("Frame")
+F:RegisterEvent("PLAYER_LOGIN")
+F:SetScript("OnEvent", function(self, event)
   --@debug@
   LucyUI:Print("fixing unitframes")
   --@end-debug@
