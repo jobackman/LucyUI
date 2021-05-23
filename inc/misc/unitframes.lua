@@ -1,9 +1,15 @@
 local _, NS = ...
 
+if NS.isClassic then
+  return
+end
+
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("PLAYER_LOGIN")
 frame:SetScript("OnEvent", function(self, event)
-
+  --@debug
+  LucyUI:Print("fixing unitframes")
+  --@end-debug
   -- PlayerFrame:UnregisterEvent("UNIT_COMBAT")
   PetFrame:UnregisterEvent("UNIT_COMBAT")
 

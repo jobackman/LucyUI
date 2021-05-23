@@ -2,6 +2,14 @@ local AddonName, NS = ...
 
 assert(LucyUI)
 
+NS.isRetail = WOW_PROJECT_ID == WOW_PROJECT_MAINLINE
+NS.isClassic = WOW_PROJECT_ID == WOW_PROJECT_CLASSIC
+NS.isTBCC = WOW_PROJECT_ID == WOW_PROJECT_BURNING_CRUSADE_CLASSIC
+
+--@debug
+LucyUI:Print("Setting up config")
+--@end-debug
+
 NS.defaultConfig = {
   profile = {
     enable = true,
