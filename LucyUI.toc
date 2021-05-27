@@ -37,3 +37,4 @@ inc/misc/unitframes.lua
 inc/misc/artframes.lua
 inc/misc/sui-micromenu.lua
 inc/misc/loss-of-control.lua
+inc/misc/arena-surrender.lua
