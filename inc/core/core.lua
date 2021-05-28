@@ -1,31 +1,33 @@
-local addonName, NS = ...
+local addonName, addon = ...
 
-LucyUI = LibStub("AceAddon-3.0"):NewAddon(addonName, "AceConsole-3.0", "AceEvent-3.0")
+LucyUI = addon
 
-AceConfig = LibStub("AceConfig-3.0")
-AceDialog = LibStub("AceConfigDialog-3.0")
+addon.isRetail = WOW_PROJECT_ID == WOW_PROJECT_MAINLINE
+addon.isClassic = WOW_PROJECT_ID == WOW_PROJECT_CLASSIC
+addon.isTBCC = WOW_PROJECT_ID == WOW_PROJECT_BURNING_CRUSADE_CLASSIC
 
-function LucyUI:OnInitialize(event)
-  --@debug@
-  self:Print("OnInitialize")
-  --@end-debug@
-  NS.db = LibStub("AceDB-3.0"):New(addonName .."DB", NS.defaultConfig, true)
-  AceConfig:RegisterOptionsTable(addonName, NS.config, {"/lui"})
-  AceDialog:AddToBlizOptions(addonName, addonName)
+--@debug@
+addon.isDebug = true
+--@end-debug@
+
+local orange = "|CFFFE8A0E"
+local blue = "|cff009cffUI"
+
+function addon.print(msg)
+  print(orange..'Lucy|r'..blue..'|r: '..msg)
 end
 
-function LucyUI:OnEnable()
-  --@debug@
-  self:Print("OnEnable")
-  ViragDevTool_AddData(NS, 'LucyUI addonTable')
-  --@end-debug@
+function addon.vdt(...)
+  if addon.isDebug then
+    ViragDevTool_AddData(...)
+  end
 end
 
-function LucyUI:OnDisable()
-  --@debug@
-  self:Print("OnDisable")
-  --@end-debug@
+local function OnLoad()
+  addon.print(". /lui for no options!")
+  addon.vdt(addon, "LucyUI")
 end
 
--- "UIFrameFadeIn", -- [461]
--- "UIFrameFadeOut", -- [462]
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("PLAYER_LOGIN")
+frame:SetScript("OnEvent", OnLoad)

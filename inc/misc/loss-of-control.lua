@@ -1,11 +1,11 @@
-local AddonName, NS = ...
+local AddonName, addon = ...
 
 --@retail@
 local F = CreateFrame("Frame")
 F:RegisterEvent("PLAYER_LOGIN")
 F:SetScript("OnEvent", function(self, event)
   --@debug@
-  LucyUI:Print("Fixing Loss of control")
+  addon.print("Fixing Loss of control")
   --@end-debug@
 
   -- https://www.mmo-champion.com/threads/1231654-Loss-of-Control-Interface-UI

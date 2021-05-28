@@ -1,8 +1,9 @@
-local _, NS = ...
+local _, addon = ...
 
 local F = CreateFrame("Frame")
 F:RegisterEvent("PLAYER_LOGIN")
 F:SetScript("OnEvent", function(self, event)
+
   local artFrames = {}
 
   --@retail@
@@ -42,7 +43,7 @@ F:SetScript("OnEvent", function(self, event)
 
   for _, frame in pairs(artFrames) do
     --@debug@
-    LucyUI:Print("Hiding "..frame:GetName())
+    addon.print("Hiding "..frame:GetName())
     --@end-debug@
     frame:Hide()
   end

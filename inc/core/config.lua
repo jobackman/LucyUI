@@ -1,34 +1,22 @@
-local AddonName, NS = ...
+local _, addon = ...
 
-assert(LucyUI)
-
-NS.isRetail = WOW_PROJECT_ID == WOW_PROJECT_MAINLINE
-NS.isClassic = WOW_PROJECT_ID == WOW_PROJECT_CLASSIC
-NS.isTBCC = WOW_PROJECT_ID == WOW_PROJECT_BURNING_CRUSADE_CLASSIC
-
---@debug@
-LucyUI:Print("Setting up config")
---@end-debug@
-
-NS.defaultConfig = {
-  profile = {
-    enable = true,
-    misc = {
-      lossOfControl = true,
-      suiMicroMenuFix = true,
-    }
-  }
+local defaults = {
+  ['some-setting'] = "kekbur"
 }
 
-NS.config = {
-  type = "group",
-  args = {
-    enable = {
-      name = "Enable",
-      desc = "Enables / disables the addon",
-      type = "toggle",
-      set = function(info,val) NS.db.global.enable = val  end,
-      get = function(info) return NS.db.global.enable end
-    }
-  }
-}
+local function copyDefaults(src, dst)
+	if type(src) ~= "table" then return {} end
+	if type(dst) ~= "table" then dst = { } end
+	for k, v in pairs(src) do
+	if type(v) == "table" then
+		dst[k] = copyDefaults(v, dst[k])
+		elseif type(v) ~= type(dst[k]) then
+		dst[k] = v
+		end
+	end
+		return dst
+end
+
+LucyUIDB = copyDefaults(defaults, LucyUIDB)
+
+addon.db = LucyUIDB
