@@ -27,6 +27,7 @@
 
 # Core
 inc/core/core.lua
+inc/core/utils.lua
 inc/core/config.lua
 inc/core/commands.lua
 

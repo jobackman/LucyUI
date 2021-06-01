@@ -24,7 +24,7 @@ function addon.vdt(...)
 end
 
 local function OnLoad()
-  addon.print(". /lui for no options!")
+  addon.print("/lui for no options!")
   addon.vdt(addon, "LucyUI")
 end
 
