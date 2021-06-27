@@ -1,9 +1,5 @@
 local _, addon = ...
 
-local function lPrint(msg)
-	print("|cFFDC143CLucyUI:|r"..msg)
-end
-
 SlashCmdList["CHAT_AFK"] = function(msg)
 	if IsActiveBattlefieldArena() then
 		if CanSurrenderArena() then
