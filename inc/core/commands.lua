@@ -10,20 +10,23 @@ local commands = {
   test = function(args)
     addon.vdt(args, "Remaining args")
   end
+
 }
 
 SLASH_LUI1 = "/lui"
 SLASH_LUI2 = "/LucyUI"
 SlashCmdList['LUI'] = function(str)
-  addon.print("slash commands: "..str)
   local args = addon.util.splitStr(str)
-  addon.vdt(args)
+  addon.vdt(args, 'Slash args')
 
-  local cmd = nextArg(args)
+  local cmd = nextArg(args, 'cmds')
 
-  if commands[cmd] ~= nil then
+  if commands[cmd] then
     commands[cmd](args)
   else
-    addon.print("Unknown option "..cmd)
+    addon.print("Available options:")
+    for k, v in pairs(commands) do
+      addon.print(SLASH_LUI1.." "..k)
+    end
   end
 end

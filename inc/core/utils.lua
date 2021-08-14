@@ -3,8 +3,10 @@ local _, addon = ...
 local util = {}
 addon.util = util
 
-function util.merge(left, right)
-
+function util.merge(original, new)
+	local t = {unpack(original)}
+	for k,v in pairs(new) do t[k] = v end
+	return t
 end
 
 function util.splitStr (inputstr, sep)

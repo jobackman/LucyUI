@@ -1,6 +1,6 @@
 local _, addon = ...
 
---@non-version-classic@
+--@retail@
 local F = CreateFrame("Frame")
 F:RegisterEvent("PLAYER_LOGIN")
 F:SetScript("OnEvent", function(self, event)
@@ -19,4 +19,4 @@ F:SetScript("OnEvent", function(self, event)
   TargetFrameSpellBar:SetScale(castbarScale)
 
 end)
---@end-non-version-classic@
+--@end-retail@

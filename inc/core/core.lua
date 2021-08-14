@@ -14,13 +14,13 @@ local orange = "|CFFFE8A0E"
 local blue = "|cff009cffUI"
 
 function addon.print(msg)
-  print(orange..'Lucy|r'..blue..'|r: '..msg)
+  print(orange..'Lucy|r'..blue..'|r: '..tostring(msg))
 end
 
 function addon.vdt(...)
-  if addon.isDebug then
+  --if addon.isDebug then
     ViragDevTool_AddData(...)
-  end
+  --end
 end
 
 local function OnLoad()
