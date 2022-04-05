@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+
+BUILD_TARGET=
+ADDONS_DIR=
+ADDON_NAME="LucyUI"
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --retail)
+            BUILD_TARGET=""
+            ADDONS_DIR="$WOW_ADDON_DIR"
+            shift 1
+            ;;
+        --bcc)
+            BUILD_TARGET="bcc"
+            ADDONS_DIR="$WOW_ADDON_DIR_BC"
+            shift 1
+            ;;
+        --asc)
+            BUILD_TARGET="bcc"
+            ADDONS_DIR="$WOW_ASCENSION_DIR"
+            shift 1
+            ;;
+        *)
+            echo "No build: $1"
+            echo "Try: --retail | --bcc | --asc"
+            exit 1
+    esac
+done
+
+if [ -z "$BUILD_TARGET" ] && [ -z "$ADDONS_DIR" ]; then
+    echo "No build $BUILD_TARGET or dir $ADDONS_DIR"
+    echo "Try: --retail | --bcc | --asc"
+    exit 1
+fi
+
+echo "-----------------------"
+echo "Addon: $ADDON_NAME"
+echo "Build: $BUILD_TARGET"
+echo "Copy to: $ADDONS_DIR"
+echo "-----------------------"
+echo "Confirm to continue..."
+read ok
+
+echo "Building $ADDON_NAME..."
+.release/release.sh -d -z -e -g $BUILD_TARGET
+echo "Copying $ADDON_NAME to $ADDONS_DIR"
+cp -rf .release/$ADDON_NAME "$ADDONS_DIR"
+
+echo "Done!"
